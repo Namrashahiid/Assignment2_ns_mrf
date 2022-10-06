@@ -1,5 +1,6 @@
 ---
 title: "Assignment2"
+author: Marit Rygg Fredheim
 format: html
 editor: visual
 ---
