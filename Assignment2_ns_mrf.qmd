@@ -18,7 +18,12 @@ We are going to use program R to solve this assignment. 
 
 ## Literature Review
 
-## EDA
+What is known about the connection between physical height, gender, education and income.
+
+In this Literature review we are going to discuss physical height and income.
+More explained, we are going to discuss here the connection between physical gender, education and income. 
+
+##   EDA
 
 ```{r}
 heights <- modelr::heights
