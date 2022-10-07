@@ -36,8 +36,31 @@ The `echo: false` option disables the printing of code (only output is displayed
 
 ## EDA
 
+```{r}
+heights <- modelr::heights
+```
+
+```{r}
+heights <- heights %>%
+mutate(
+married = fct_collapse(
+.f = marital,
+married = "married",
+other_level = "not-married"
+)
+)
+```
+
 ## Discussion
 
 ## Conslusion
 
 ## Refrences
+
+```{r}
+print(citation(), bibtex = TRUE)
+```
+
+```{r}
+print(citation("modelr"), bibtex = TRUE)
+```
