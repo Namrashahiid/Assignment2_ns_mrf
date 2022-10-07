@@ -12,6 +12,10 @@ How we can use EDA (Explanatory Data Analysis).
 
 ## Introduction
 
+In this essay are we going to study datasets of heights in the modelr package.
+We will in this assignment do an EDA (Explanatory Data Analysis) of the dataset heights in the modelr package.
+We are going to use program R to solve this assignment. 
+
 ## Literature Review
 
 ## EDA
