@@ -8,6 +8,8 @@ editor: visual
 
 ## Abstract
 
+How we can use EDA (Explanatory Data Analysis)
+
 ## Introduction
 
 ## Literature Review
