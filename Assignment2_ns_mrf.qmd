@@ -82,9 +82,14 @@ Researchers used genetic testing to come up with the effect of height on income.
 
 ## EDA
 
-```{r}
-heights <- modelr::heights
-```
+Describe here the dataset with the help of tables and graphics.
+Its first single variable with histograms, density plots, etc.
+Remember here to use facets to group on different variables. 
+
+\
+\
+{r}
+heights \<- modelr::heights
 
 ```{r}
 heights <- heights %>%
