@@ -1,6 +1,7 @@
 ---
 title: "Assignment2"
 author: Marit Rygg Fredheim
+author: Namra Shahid
 format: html
 editor: visual
 ---
