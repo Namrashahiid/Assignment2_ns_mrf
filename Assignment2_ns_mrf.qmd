@@ -86,21 +86,6 @@ Describe here the dataset with the help of tables and graphics.
 Its first single variable with histograms, density plots, etc.
 Remember here to use facets to group on different variables. 
 
-\
-\
-{r} heights \<- modelr::heights
-
-```{r}
-heights <- heights %>%
-mutate(
-married = fct_collapse(
-.f = marital,
-married = "married",
-other_level = "not-married"
-)
-)
-```
-
 ## Discussion
 
 ## Conslusion
