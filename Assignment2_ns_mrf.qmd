@@ -88,8 +88,7 @@ Remember here to use facets to group on different variables. 
 
 \
 \
-{r}
-heights \<- modelr::heights
+{r} heights \<- modelr::heights
 
 ```{r}
 heights <- heights %>%
