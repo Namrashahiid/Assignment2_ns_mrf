@@ -67,8 +67,6 @@ This question has inspired many researchers to interpret the observed height pre
 However, this interpretation is now disputed on the basis of a purported association between height and improved employment outcomes; the alleged association may be the result of unmeasurable factors that affect one's employment performance.
 For instance, scientists have found that height is correlated to both cognition and non-cognitive abilities; these abilities play a large role in one's career success.
 
- 
-
 The result of Wang and others shows us that height is indeed associated with higher salary income.
 Association between income and one's physical appearance (like height, stature, BMI, or facial appearance) has inspired a large number of studies that aim to discover the causal mechanisms.
 This document continues the discussion on this topic and uses recent information from China to demonstrate that without taking into account dependence, height is correlated with higher income.
