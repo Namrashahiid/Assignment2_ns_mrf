@@ -6,6 +6,7 @@ gitignore
 *.docx
 *.md
 *.tex
+Assignment2_ns_mrf_files/
 
 # History files
 .Rhistory
