@@ -6,6 +6,10 @@ format: html
 editor: visual
 ---
 
+```{r}
+heights <- modelr::heights
+```
+
 ## Abstract
 
 How we can use EDA (Explanatory Data Analysis).
