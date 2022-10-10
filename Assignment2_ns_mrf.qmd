@@ -226,6 +226,11 @@ other_level = "not-married"
 
 ## Discussion
 
+From EDA we can say that the connection between physical height, gender, education and income is that income from what we have researched in this assignment depends on the factors such as height.
+As we have discussed in the Literature review, many researchers shows us that height determine income.
+Most research are in favor of that height have much to say about how much income one individual have.
+In the Literature review we have discussed some researcher point of view on height dependence on income.
+
 ## Conslusion
 
 ## Refrences
