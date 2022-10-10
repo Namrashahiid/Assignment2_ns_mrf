@@ -228,7 +228,10 @@ other_level = "not-married"
 
 ## Conslusion
 
-## Refrences
+## References
+
+::: {#refs}
+:::
 
 ## Tools used
 
