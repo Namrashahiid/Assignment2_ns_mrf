@@ -174,52 +174,41 @@ hist2 <- ggplot(heights, mapping = aes(x = income)) +
 hist3 <- ggplot(heights, mapping = aes(x = marital)) +
   geom_histogram(bins = 40, na.rm = TRUE)
 
-gridExtra::grid.arrange(hist1, hist2, ncol = 2)
+gridExtra::grid.arrange(hist1, hist2, hist3, nrow = 1)
 ```
 
 ```{r}
-hist3 <- ggplot(heights, mapping = aes(x = income)) +
+hist4 <- ggplot(heights, mapping = aes(x = income)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist4 <- ggplot(heights, mapping = aes(x = height) (y = income) ) +
+hist5 <- ggplot(heights, mapping = aes(x = height)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist5 <- ggplot(heights, mapping = aes(x = weight)) +
+hist6 <- ggplot(heights, mapping = aes(x = weight)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist3, hist4, hist5, nrow = 1)
+gridExtra::grid.arrange(hist4, hist5, hist6, nrow = 1)
 ```
 
 ```{r}
-hist6 <- ggplot(heights, mapping = aes(x = age)) +
+hist7 <- ggplot(heights, mapping = aes(x = age)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist7 <- ggplot(heights, mapping = aes(x = education)) +
+hist8 <- ggplot(heights, mapping = aes(x = education)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist8 <- ggplot(heights, mapping = aes(x = afqt)) +
+hist9 <- ggplot(heights, mapping = aes(x = afqt)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist6, hist7, hist8, nrow = 1)
+gridExtra::grid.arrange(hist7, hist8, hist9, nrow = 1)
 ```
 
 ```{r}
-(yheights %>% 
+heights %>% 
   mutate(
-    edu_fac = cut(height, 
+    edu_fac = cut(education, 
                   breaks = c(0, 12, 14, 16, 21), 
                   labels = c("NotHS", "NotTC", "NotC", "C+"),
                   right = FALSE) 
   ) %>% 
   filter(!is.na(edu_fac) & income > 0) %>%
-  ggplot(mapping = aes(x = income, fill = sex, colour = sex)) +
+  ggplot(mapping = aes(x = income, fill = edu_fac, colour = edu_fac)) +
   geom_density(alpha = 0.2, na.rm = TRUE) + 
-  facet_wrap(~edu_fac)
-```
-
-```{r}
-heights <- heights %>%
-mutate(
-married = fct_collapse(
-.f = marital,
-married = "married",
-other_level = "not-married"
-)
-)
+  facet_wrap(~sex)
 ```
 
 ## Discussion
