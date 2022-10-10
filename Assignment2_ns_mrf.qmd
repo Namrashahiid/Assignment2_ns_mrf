@@ -173,6 +173,8 @@ gridExtra::grid.arrange(hist1, hist2, ncol = 2)
 hist1 <- ggplotify::as.ggplot(~hist(heights$income, breaks = 20))
 hist2 <- ggplot(heights, mapping = aes(x = income)) +
   geom_histogram(bins = 20)
+hist3 <- ggplot(heights, mapping = aes(x = marital)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
 
 gridExtra::grid.arrange(hist1, hist2, ncol = 2)
 ```
@@ -180,7 +182,7 @@ gridExtra::grid.arrange(hist1, hist2, ncol = 2)
 ```{r}
 hist3 <- ggplot(heights, mapping = aes(x = income)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist4 <- ggplot(heights, mapping = aes(x = height)) +
+hist4 <- ggplot(heights, mapping = aes(x = height) (y = income) ) +
   geom_histogram(bins = 40, na.rm = TRUE)
 hist5 <- ggplot(heights, mapping = aes(x = weight)) +
   geom_histogram(bins = 40, na.rm = TRUE)
@@ -198,7 +200,7 @@ gridExtra::grid.arrange(hist6, hist7, hist8, nrow = 1)
 ```
 
 ```{r}
-heights %>% 
+(yheights %>% 
   mutate(
     edu_fac = cut(height, 
                   breaks = c(0, 12, 14, 16, 21), 
