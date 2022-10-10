@@ -24,42 +24,42 @@ In this Literature review we are going to discuss physical height and income.
 More explained, we are going to discuss here the connection between physical gender, education and income. 
 
 There are many scientists/researchers out there who investigate or research on the connection between physical gender, education and income.
-(Avrett, S. Korenman, S, 1996).
+[@averettEconomicRealityBeauty1996].
 What most researchers do is that they investigate income, marital status, and hourly pay differentials by body mass (kg/m2).
 According to researchers differences in economic status by body mass for women is increasing markedly when we use an old weight data/measurement.
 The same applies also if we restrict the sample to persons who were single and childless when the old weight was sampled. 
 
-A research from The university of Chicago Press Journal show that stature, status, self-esteem, social dominance and discrimination is based on the association between height, earnings and labour market outcomes (Case, A., and Paxson, C. 2008). 
+A research from The university of Chicago Press Journal show that stature, status, self-esteem, social dominance and discrimination is based on the association between height, earnings and labour market outcomes [@caseStatureStatusHeight2008].
 
-A study from Deaton shows that the height of an adult depends on genetics and by intake of food, like nutrition and the importance of balanced food (Deaton, A. 2007).
+A study from Deaton shows that the height of an adult depends on genetics and by intake of food, like nutrition and the importance of balanced food [@deatonHeightHealthDevelopment2007].
 This study shows that low nutrition quality can cause non survival of children which can cause short height or in worst case death. 
 
-One study shows that taller workers who are tall receive a wage earning premium just by increasing/developing strength, size, stamina and enhancing labor productivity.
-(Schick, A., and Steckel, R. H. 2015).
+One study shows that taller workers who are tall receive a wage earning premium just by increasing/developing strength, size, stamina and enhancing labor productivity [@schickHeightHumanCapital2015] .
 Most studies show that height and disturbance.
 Here many researchers react to this, and Persico et al. (2004) says that this is developed and increased in at a young teenage.
 Many scientists come up with a theory that when it comes to productivity it's important to mention emotional stability and boldness because these two are important factors. 
 
 There is much social awareness on being overweight.
-For example, one important thing here to mention is that Americans face much social and psychological awareness when it comes to being overweight (Mankiw, N. G, and Weinzierl, M. 2010).
+For example, one important thing here to mention is that Americans face much social and psychological awareness when it comes to being overweight [@mankiwOptimalTaxationHeight].
 In this theory we see that height is one of the factors to get independent and earn more.
 But at the same time height is one of many characteristics.
 There are many other characteristics that matter more than just the height for a person to earn money. 
 
-Researchers show that taller persons are smarter than shorter ones (Pinsker, J. 2015).
+Researchers show that taller persons are smarter than shorter ones [@pinskerEveryInchTaller2015].
 Taller people do better at a young age, compared to smaller ones.
 There are many scientists out there who will disagree with this theory, but there is some evidence that shows that taller persons are smarter and earn more. 
 
-Many studies show that marriage has a large impact on work (Reed, W. R., and Harford, K. 1989).
+Many studies show that marriage has a large impact on work [@reedMarriagePremiumCompensating].
 The important fact here to come up with is that marital status relies upon the consumption of the family.
 This study/ research shows that men are more likely to marry compared to women. 
 
-Recent research shows us that men´ wages rise more rapidly than expected prior to marriage (Killewald, A., and Lundberg, I. 2017).
+Recent research shows us that men´ wages rise more rapidly than expected prior to marriage [@killewaldNewEvidenceCausal2017].
 The main focus of this research is that married men experience or go through wage advantages, compared with never-married men and divorced men. 
 
-Not only marriage but other studies show that stature and favorable labor market outcomes has also been extensively documented (Lundborg, P., Nystedt, B. P. F., and Rooth, D.-O. 2009) Height is a very important factor, when it comes to being productive and earning money. 
+Not only marriage but other studies show that stature and favorable labor market outcomes has also been extensively documented [@lundborgHeightPremiumEarnings2009].
+Height is a very important factor, when it comes to being productive and earning money. 
 
-Many experts believe that height is a significant factor in professional success (Wang et. Al).
+Many experts believe that height is a significant factor in professional success [@wangWhatCreatingHeight2020].
 However, why do higher wages for being tall occur?
 Yet why is a greater salary associated with greater height?
 More intriguingly, why is it observed in labor markets that lack a height factor thought to be critical to productivity, for example, sedentary white-collar jobs in industrialized countries?
@@ -67,15 +67,13 @@ This question has inspired many researchers to interpret the observed height pre
 However, this interpretation is now disputed on the basis of a purported association between height and improved employment outcomes; the alleged association may be the result of unmeasurable factors that affect one's employment performance.
 For instance, scientists have found that height is correlated to both cognition and non-cognitive abilities; these abilities play a large role in one's career success.
 
- 
-
-The result of Wang and others shows us that height is indeed associated with higher salary income.
+The result of @wangWhatCreatingHeight2020 shows us that height is indeed associated with higher salary income.
 Association between income and one's physical appearance (like height, stature, BMI, or facial appearance) has inspired a large number of studies that aim to discover the causal mechanisms.
 This document continues the discussion on this topic and uses recent information from China to demonstrate that without taking into account dependence, height is correlated with higher income.
 Using the unique genetic data associated with prosperous individuals, we then explore and demonstrate that genetic cognition, genetic risk of depression, various personality traits, as well as other confounders that are associated with height are likely to be the actual cause of the observed height premium.
 Through the unique advantageous individual genetic data, we then investigate and display that genetic cognitive ability, genetic risk of depression, various personality traits, as well as other confounding variables that are correlated with height are likely to be the true causes of the observed height advantage. 
 
-There is one more study that shows that height has a big impact on one person's salary (Travers, M. n.d.).
+There is one more study that shows that height has a big impact on one person's salary [@traversYourHeightHas2020].
 This study also talks about Wang´s research in China.
 Here in this study it's also studied that there is an even more interesting fact.
 Researchers used genetic testing to come up with the effect of height on income. 
