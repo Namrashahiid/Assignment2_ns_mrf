@@ -1,9 +1,10 @@
 ---
-title: "Assignment2"
-author: Marit Rygg Fredheim & Namra Shahid
+title: "EDA (Explanatory Data Analysis) of the dataset heights"
+authors: Marit Rygg Fredheim & Namra Shahid
 format: html
 editor: visual
 bibliography: datascience2.bib
+csl: apa-no-ampersand.csl
 ---
 
 ```{r}
@@ -23,7 +24,7 @@ To solve this assignment we are going to use the program RStudio.
 ## Literature Review
 
 In this Literature review we are going to discuss physical height and income.
-More explained, we are going to discuss the connection between physical gender, education and income. 
+More explained, we are going to discuss the connection between physical gender, education and income.
 
 There are many researchers who investigate or research on the connection between physical gender, education and income.
 [@averettEconomicRealityBeauty1996].
@@ -34,32 +35,32 @@ The same applies also if we restrict the sample to persons who were single and c
 A research from The university of Chicago Press Journal show that stature, status, self-esteem, social dominance and discrimination is based on the association between height, earnings and labour market outcomes [@caseStatureStatusHeight2008].
 
 A study from Deaton shows that the height of an adult depends on genetics and by intake of food, like nutrition and the importance of balanced food [@deatonHeightHealthDevelopment2007].
-This study also shows that low nutrition quality can cause non survival of children which can cause short height or in worst case death. 
+This study also shows that low nutrition quality can cause non survival of children which can cause short height or in worst case death.
 
 One study shows that taller workers receive a wage earning premium just by increasing/developing strength, size, stamina and enhancing labor productivity [@schickHeightHumanCapital2015] .
 Most studies show that height and disturbance.
 Here many researchers react to this, and Persico et al. (2004) says that this is developed and increased at a young age.
-Many scientists come up with a theory that when it comes to productivity it's important to mention emotional stability and boldness because these two are important factors. 
+Many scientists come up with a theory that when it comes to productivity it's important to mention emotional stability and boldness because these two are important factors.
 
 There is much social awareness on being overweight.
 For example, one important thing to mention is that Americans face much social and psychological awareness when it comes to being overweight [@mankiwOptimalTaxationHeight].
 In this theory we see that height is one of the factors to get independent and earn more.
 But at the same time height is one of many characteristics.
-There are many other characteristics that matter more than just the height for a person to earn money. 
+There are many other characteristics that matter more than just the height for a person to earn money.
 
 Researchers show that taller persons are smarter than shorter ones [@pinskerEveryInchTaller2015].
 Taller people do better at a young age, compared to smaller ones.
-There are many scientists out there who will disagree with this theory, but there is some evidence that shows that taller persons are smarter and earn more. 
+There are many scientists out there who will disagree with this theory, but there is some evidence that shows that taller persons are smarter and earn more.
 
 Many studies show that marriage has a large impact on work [@reedMarriagePremiumCompensating].
 The important fact here to come up with is that marital status relies upon the consumption of the family.
-This study shows that men are more likely to marry compared to women. 
+This study shows that men are more likely to marry compared to women.
 
 Recent research shows us that men´ wages rise more rapidly than expected prior to marriage [@killewaldNewEvidenceCausal2017].
-The main focus of this research is that married men experience or go through wage advantages, compared with never-married men and divorced men. 
+The main focus of this research is that married men experience or go through wage advantages, compared with never-married men and divorced men.
 
 Not only marriage but other studies show that stature and favorable labor market outcomes has also been extensively documented [@lundborgHeightPremiumEarnings2009].
-Height is a very important factor, when it comes to being productive and earning money. 
+Height is a very important factor, when it comes to being productive and earning money.
 
 Many experts believe that height is a significant factor in professional success [@wangWhatCreatingHeight2020].
 However, why do higher wages for being tall occur?
@@ -73,46 +74,40 @@ The result of @wangWhatCreatingHeight2020 shows us that height is indeed associa
 Association between income and one's physical appearance (like height, stature, BMI, or facial appearance) has inspired a large number of studies that aim to discover the causal mechanisms.
 This document continues the discussion on this topic and uses recent information from China to demonstrate that without taking into account dependence, height is correlated with higher income.
 Using the unique genetic data associated with prosperous individuals, we then explore and demonstrate that genetic cognition, genetic risk of depression, various personality traits, as well as other confounders that are associated with height are likely to be the actual cause of the observed height premium.
-Through the unique advantageous individual genetic data, we then investigate and display that genetic cognitive ability, genetic risk of depression, various personality traits, as well as other confounding variables that are correlated with height are likely to be the true causes of the observed height advantage. 
+Through the unique advantageous individual genetic data, we then investigate and display that genetic cognitive ability, genetic risk of depression, various personality traits, as well as other confounding variables that are correlated with height are likely to be the true causes of the observed height advantage.
 
 There is one more study that shows that height has a big impact on one person's salary [@traversYourHeightHas2020].
 This study also talks about Wang´s research in China.
 There is also an even more interesting fact.
-Researchers used genetic testing to come up with the effect of height on income. 
+Researchers used genetic testing to come up with the effect of height on income.
 
 ## EDA
 
-Describe here the dataset with the help of tables and graphics.
-Its first single variable with histograms, density plots, etc.
-Remember here to use facets to group on different variables. 
+In this study we are using the dataset heights.
+The purpose of this dataset is to compare how seven different variables affect each other.
+This dataset consist of the variables income, height, weight, age, marital, sex, education and aftq (percentile score on Armed Forces Qualification Test).
+Our consern will be to describe the variables with the help of tables and graphics and inn addition start to investigate how the seven variables influence income.
+We will start to present the data from the dataset.\
 
 ```{r}
-packs <- suppressPackageStartupMessages(
-  c(
-    library(tidyverse),
-    library(modelr),
-    library(grid),
-    library(ggplotify),
-    library(vtable),
-    library(gridExtra),
-    library(ggplot2),
-    library(magrittr),
-    library(dplyr),
+# load packages
+    library(tidyverse)
+    library(modelr)
+    library(grid)
+    library(ggplotify)
+    library(vtable)
+    library(gridExtra)
+    library(ggplot2)
+    library(magrittr)
+    library(dplyr)
     library(expm)
-    )
-)
 ```
 
 ```{r}
 heights <- modelr::heights
 ```
 
-```{r}
-# NAs in my_heights?
-heights %>% 
-  apply(MARGIN = 2, FUN = is.na) %>% 
-  apply(MARGIN = 2, FUN = sum) 
-```
+The following table shows the 7 variables divided into the categories male and female.
 
 ```{r}
 heights %>% 
@@ -121,15 +116,6 @@ heights %>%
 ```
 
 ```{r}
-# package vtable must be installed
-heights %>% 
-  select(-marital, -sex) %>% 
-  # . to stop RStudio complaining about no data
-  vtable::st(.)
-```
-
-```{r}
-# package vtable must be installed
 heights %>% 
   select(marital, sex) %>% 
   vtable::st(.)
@@ -142,7 +128,6 @@ heights %>%
 ```
 
 ```{r}
-# package vtable must be installed
 heights %>% 
   mutate(married = if_else(marital == 'married', TRUE, FALSE)) %>% 
   filter(sex == 'female') %>% 
@@ -151,7 +136,6 @@ heights %>%
 ```
 
 ```{r}
-# package vtable must be installed
 heights %>% 
   mutate(married = if_else(marital == 'married', TRUE, FALSE)) %>% 
   filter(sex == 'male') %>% 
@@ -160,53 +144,64 @@ heights %>%
 ```
 
 ```{r}
-hist1 <- ggplotify::as.ggplot(~hist(heights$income, breaks = 20))
-hist2 <- ggplot(heights, mapping = aes(x = income)) +
-  geom_histogram(bins = 20)
-
-gridExtra::grid.arrange(hist1, hist2, ncol = 2)
+hist_income <- ggplot(heights, mapping = aes(x = income)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
+hist_height <- ggplot(heights, mapping = aes(x = height)) +
+  
+  geom_histogram(bins = 40, na.rm = TRUE)
+hist_weight <- ggplot(heights, mapping = aes(x = weight)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
+gridExtra::grid.arrange(hist_income, hist_height, hist_weight, nrow = 1)
 ```
 
 ```{r}
-hist1 <- ggplotify::as.ggplot(~hist(heights$income, breaks = 20))
-hist2 <- ggplot(heights, mapping = aes(x = income)) +
-  geom_histogram(bins = 20)
-
-gridExtra::grid.arrange(hist1, hist2, ncol = 2)
+hist1 <- ggplot(heights, mapping = aes(x = age)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
+hist2 <- ggplot(heights, mapping = aes(x = education)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
+hist3 <- ggplot(heights, mapping = aes(x = afqt)) +
+  geom_histogram(bins = 40, na.rm = TRUE)
+gridExtra::grid.arrange(hist1, hist2, hist3, nrow = 1)
 ```
 
 ```{r}
-hist3 <- ggplot(heights, mapping = aes(x = income)) +
+hist4 <- ggplot(heights, mapping = aes(x = marital)) +
   geom_histogram(bins = 40, na.rm = TRUE)
-hist4 <- ggplot(heights, mapping = aes(x = height)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist5 <- ggplot(heights, mapping = aes(x = weight)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist3, hist4, hist5, nrow = 1)
-```
-
-```{r}
-hist6 <- ggplot(heights, mapping = aes(x = age)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist7 <- ggplot(heights, mapping = aes(x = education)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist8 <- ggplot(heights, mapping = aes(x = afqt)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist6, hist7, hist8, nrow = 1)
 ```
 
 ```{r}
 heights %>% 
   mutate(
-    edu_fac = cut(height, 
+    edu_fac = cut(education, 
                   breaks = c(0, 12, 14, 16, 21), 
                   labels = c("NotHS", "NotTC", "NotC", "C+"),
                   right = FALSE) 
   ) %>% 
   filter(!is.na(edu_fac) & income > 0) %>%
-  ggplot(mapping = aes(x = income, fill = sex, colour = sex)) +
+  ggplot(mapping = aes(x = income, fill = edu_fac, colour = edu_fac)) +
   geom_density(alpha = 0.2, na.rm = TRUE) + 
-  facet_wrap(~edu_fac)
+  facet_wrap(~sex)
+```
+
+```{r}
+heights <- heights %>% 
+  group_by(sex) %>% 
+  mutate(
+    heightIntSex = cut_number(height, n = 5, labels = c("very low", "low", "medium", "high", "very high"))
+  )
+```
+
+```{r}
+heights %>% 
+  filter(income > 0 & income < 300000) %>%
+  mutate(
+    bmi = (weight * 0.454)/((0.01*height * 2.52)^2)
+    ) %>% 
+  ggplot(mapping = aes(x = bmi, y = income)) +
+  geom_point(mapping = aes(colour = factor(age)), size = 0.7, alpha = 0.3, na.rm = TRUE) + 
+  geom_smooth(method = "lm", colour = "black", lwd = 0.5, na.rm = TRUE) + 
+  facet_grid(heightIntSex ~ sex) + 
+  theme(legend.position = "bottom", strip.text.y = element_text(angle = 0))
 ```
 
 ## Discussion
