@@ -1,9 +1,9 @@
 ---
 title: "Assignment2"
-author: Marit Rygg Fredheim
-author: Namra Shahid
+author: Marit Rygg Fredheim & Namra Shahid
 format: html
 editor: visual
+bibliography: datascience2.bib
 ---
 
 ## Abstract
