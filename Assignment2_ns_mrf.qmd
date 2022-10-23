@@ -23,6 +23,7 @@ output:
     library(dplyr)
     library(expm)
     library(broom)
+    library(knitr)
 ```
 
 ```{r, include = FALSE}
@@ -118,7 +119,7 @@ ggplot(data = heights) +
   geom_bar(mapping = aes(x = marital, fill = marital))
 ```
 
-[(Dårle engelsk, eg veit :P) We see form the table and graph that we have a lot of different marital categories. The next thing we are going to do is to make the marital categories to married/not married.]{.underline}
+[(Dårle engelsk, eg veit :P) We see form the table and graph that we have a lot of different marital categories. The next thing we are going to do is to make the marital categories to 'married' and 'not married'.]{.underline}
 
 ```{r}
 heights <- heights %>%
@@ -138,8 +139,6 @@ heights %>%
   vtable::st(group = 'married')
 ```
 
-Sette inn ein graf som viser inntekt i forhold til om ein er gift eller ikkje
-
 ```{r}
 heights %>% 
   mutate(
@@ -150,7 +149,7 @@ heights %>%
   geom_boxplot()
 ```
 
-[Kva vi ser av grafen. Menn som er gift ser ut til å tjene litt meir enn menn som ikkje er gift. Kvinner tjener ca like mykje om dei er gift eller ikkje.]{.underline}
+[Kva vi ser av grafen... Av grafen ser det ut til at menn som er gift ser ut til å tjene litt meir enn menn som ikkje er gift. Kvinner tjener ca like mykje om dei er gift eller ikkje.]{.underline}
 
 ### Education
 
@@ -181,9 +180,11 @@ heights %>%
   facet_wrap(~edu_fac)
 ```
 
-[Litt om kva vi ser av grafane.]{.underline}
+[Litt om kva vi ser av grafane... Flatere kurve på dei som har collage + utdanning, kan sjå ut som det er fleire i denne grafen som har høgare inntekt... Dess lågare inntekt dess høgare er kurva i starten av grafen. (Kan sjå ut til at dess lengre og høgare utdanning, dess høgare inntekt?)]{.underline}
 
 ### Sex/Height/Income/Education
+
+[Her vil eg eigentle ha education på høgre sida derfor står det education i overskrifta.]{.underline}
 
 ```{r}
 heights <- heights %>% 
@@ -203,7 +204,12 @@ heights %>%
   theme(legend.position = "bottom", strip.text.y = element_text(angle = 0))
 ```
 
+[Desse grafane viser]{.underline}... høgde og utdanning i forhold til inntekt.
+Grafen viser også korles alder fordelar seg.
+
 ### Weight & Aftq
+
+[Til slutt manglar vi berre å sjå på vekt og afqt (percentile score on Armed Forces Qualification Test). Desse skal vi sjå på ved å bruke histogram.]{.underline}
 
 ```{r}
 hist_weight <- ggplotify::as.ggplot(~hist(heights$weight, breaks = 20))
