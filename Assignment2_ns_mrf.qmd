@@ -121,7 +121,7 @@ ggplot(data = heights) +
 [(Dårle engelsk, eg veit :P) We see form the table and graph that we have a lot of different marital categories. The next thing we are going to do is to make the marital categories to married/not married.]{.underline}
 
 ```{r}
-heights <- heights %<>%
+heights <- heights %>%
   mutate(
     married = fct_collapse(
       .f = marital,
@@ -132,7 +132,7 @@ heights <- heights %<>%
 ```
 
 ```{r}
-heights %<>% 
+heights %>% 
   mutate(married = if_else(marital == 'married', TRUE, FALSE)) %>% 
   select( -marital) %>% 
   vtable::st(group = 'married')
@@ -141,10 +141,16 @@ heights %<>%
 Sette inn ein graf som viser inntekt i forhold til om ein er gift eller ikkje
 
 ```{r}
-ggplot(group = 'married')
+heights %>% 
+  mutate(
+    married = if_else(marital == 'married', TRUE, FALSE)) %>% 
+  filter(income > 0) %>% 
+  ggplot(mapping = aes(x = married, y = income)) +
+  facet_wrap(~sex) + 
+  geom_boxplot()
 ```
 
-[Kva vi ser av grafen]{.underline}
+[Kva vi ser av grafen. Menn som er gift ser ut til å tjene litt meir enn menn som ikkje er gift. Kvinner tjener ca like mykje om dei er gift eller ikkje.]{.underline}
 
 ### Education
 
