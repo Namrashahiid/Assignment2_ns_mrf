@@ -5,9 +5,27 @@ format: html
 editor: visual
 bibliography: datascience2.bib
 csl: apa-no-ampersand.csl
+output:
+  html_document:
+    code_folding: hide
 ---
 
-```{r}
+```{r, include = FALSE}
+# load packages
+    library(tidyverse)
+    library(modelr)
+    library(grid)
+    library(ggplotify)
+    library(vtable)
+    library(gridExtra)
+    library(ggplot2)
+    library(magrittr)
+    library(dplyr)
+    library(expm)
+    library(broom)
+```
+
+```{r, include = FALSE}
 heights <- modelr::heights
 ```
 
@@ -87,44 +105,23 @@ In this study we are using the dataset heights.
 The purpose of this dataset is to compare how seven different variables affect each other.
 This dataset consist of the variables income, height, weight, age, marital, sex, education and aftq (percentile score on Armed Forces Qualification Test).
 Our consern will be to describe the variables with the help of tables and graphics and inn addition start to investigate how the seven variables influence income.
-We will start to present the data from the dataset.\
+We will start to present a summary of the data from the dataset.\
 
 ```{r}
-# load packages
-    library(tidyverse)
-    library(modelr)
-    library(grid)
-    library(ggplotify)
-    library(vtable)
-    library(gridExtra)
-    library(ggplot2)
-    library(magrittr)
-    library(dplyr)
-    library(expm)
+st(heights)
 ```
 
-```{r}
-heights <- modelr::heights
-```
-
-The following table shows the 7 variables divided into the categories male and female.
+[(Dårle engelsk, eg veit :P) We see form the table that we have a lot of different marital variables. The next thing we are going to do is to make the marital variables to married/not married.]{.underline}
 
 ```{r}
-heights %>% 
-  select(-marital) %>% 
-  vtable::st(group = 'sex')
-```
-
-```{r}
-heights %>% 
-  select(marital, sex) %>% 
-  vtable::st(.)
-```
-
-```{r}
-heights %>% 
-  select(-marital) %>% 
-  vtable::st(group = 'sex')
+heights <- heights %>%
+  mutate(
+    married = fct_collapse(
+      .f = marital,
+      married = "married",
+      other_level = "not-married"
+    )
+  ) 
 ```
 
 ```{r}
@@ -135,39 +132,26 @@ heights %>%
   vtable::st(group = 'married')
 ```
 
-```{r}
-heights %>% 
-  mutate(married = if_else(marital == 'married', TRUE, FALSE)) %>% 
-  filter(sex == 'male') %>% 
-  select(-sex, -marital) %>% 
-  vtable::st(group = 'married')
-```
+Sette inn ein graf som viser inntekt i forhold til om ein er gift eller ikkje
 
 ```{r}
-hist_income <- ggplot(heights, mapping = aes(x = income)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist_height <- ggplot(heights, mapping = aes(x = height)) +
-  
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist_weight <- ggplot(heights, mapping = aes(x = weight)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist_income, hist_height, hist_weight, nrow = 1)
+ggplot(group = 'married')
 ```
 
-```{r}
-hist1 <- ggplot(heights, mapping = aes(x = age)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist2 <- ggplot(heights, mapping = aes(x = education)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-hist3 <- ggplot(heights, mapping = aes(x = afqt)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
-gridExtra::grid.arrange(hist1, hist2, hist3, nrow = 1)
-```
+[Kva vi ser av grafen]{.underline}
+
+The next thing we are going to look into is education.
 
 ```{r}
-hist4 <- ggplot(heights, mapping = aes(x = marital)) +
-  geom_histogram(bins = 40, na.rm = TRUE)
+ggplot(data = heights) +
+  geom_bar(mapping = aes(x = education), na.rm = TRUE)
 ```
+
+We see from the table that we also have a lot of categories in this variable.
+We have 20 different categories and we want to divide this into smaller subcategories.
+There are a peak at 12, 14 and 16 years.
+Because of that we will divide the variable into these four subcategories: not high-school (0-12 years), not trade collage (12-14 years), not collage (14-16 years) and collage + (16-21 years).
+The following graphs are also divided into men and female with blue and pink colour.
 
 ```{r}
 heights %>% 
@@ -178,30 +162,22 @@ heights %>%
                   right = FALSE) 
   ) %>% 
   filter(!is.na(edu_fac) & income > 0) %>%
-  ggplot(mapping = aes(x = income, fill = edu_fac, colour = edu_fac)) +
+  ggplot(mapping = aes(x = income, fill = sex, colour = sex)) +
   geom_density(alpha = 0.2, na.rm = TRUE) + 
-  facet_wrap(~sex)
+  facet_wrap(~edu_fac)
 ```
 
-```{r}
-heights <- heights %>% 
-  group_by(sex) %>% 
-  mutate(
-    heightIntSex = cut_number(height, n = 5, labels = c("very low", "low", "medium", "high", "very high"))
-  )
-```
+[Litt om kva vi ser av grafane.]{.underline}
+
+Sex/Height/Inntekt/Education
+
+Weight & Aftq
 
 ```{r}
-heights %>% 
-  filter(income > 0 & income < 300000) %>%
-  mutate(
-    bmi = (weight * 0.454)/((0.01*height * 2.52)^2)
-    ) %>% 
-  ggplot(mapping = aes(x = bmi, y = income)) +
-  geom_point(mapping = aes(colour = factor(age)), size = 0.7, alpha = 0.3, na.rm = TRUE) + 
-  geom_smooth(method = "lm", colour = "black", lwd = 0.5, na.rm = TRUE) + 
-  facet_grid(heightIntSex ~ sex) + 
-  theme(legend.position = "bottom", strip.text.y = element_text(angle = 0))
+hist_weight <- ggplotify::as.ggplot(~hist(heights$weight, breaks = 20))
+hist_afqt <- ggplotify::as.ggplot(~hist(heights$afqt, breaks = 20))
+
+gridExtra::grid.arrange(hist_weight, hist_afqt, ncol = 2)
 ```
 
 ## Discussion
