@@ -111,10 +111,17 @@ We will start to present a summary of the data from the dataset.\
 st(heights)
 ```
 
-[(Dårle engelsk, eg veit :P) We see form the table that we have a lot of different marital variables. The next thing we are going to do is to make the marital variables to married/not married.]{.underline}
+### Marital
 
 ```{r}
-heights <- heights %>%
+ggplot(data = heights) + 
+  geom_bar(mapping = aes(x = marital, fill = marital))
+```
+
+[(Dårle engelsk, eg veit :P) We see form the table and graph that we have a lot of different marital categories. The next thing we are going to do is to make the marital categories to married/not married.]{.underline}
+
+```{r}
+heights <- heights %<>%
   mutate(
     married = fct_collapse(
       .f = marital,
@@ -125,10 +132,9 @@ heights <- heights %>%
 ```
 
 ```{r}
-heights %>% 
+heights %<>% 
   mutate(married = if_else(marital == 'married', TRUE, FALSE)) %>% 
-  filter(sex == 'female') %>% 
-  select(-sex, -marital) %>% 
+  select( -marital) %>% 
   vtable::st(group = 'married')
 ```
 
@@ -139,6 +145,8 @@ ggplot(group = 'married')
 ```
 
 [Kva vi ser av grafen]{.underline}
+
+### Education
 
 The next thing we are going to look into is education.
 
@@ -169,9 +177,27 @@ heights %>%
 
 [Litt om kva vi ser av grafane.]{.underline}
 
-Sex/Height/Inntekt/Education
+### Sex/Height/Income/Education
 
-Weight & Aftq
+```{r}
+heights <- heights %>% 
+  group_by(sex) %>% 
+  mutate(
+    heightIntSex = cut_number(height, n = 4, labels = c("very low", "low", "medium", "high"))
+  )
+```
+
+```{r}
+heights %>% 
+  filter(income > 0 & income < 300000) %>%
+  ggplot(mapping = aes(x = height, y = income)) +
+  geom_point(mapping = aes(colour = factor(age)), size = 0.7, alpha = 0.3, na.rm = TRUE) + 
+  geom_smooth(method = "lm", colour = "black", lwd = 0.5, na.rm = TRUE) + 
+  facet_grid(heightIntSex ~ sex) + 
+  theme(legend.position = "bottom", strip.text.y = element_text(angle = 0))
+```
+
+### Weight & Aftq
 
 ```{r}
 hist_weight <- ggplotify::as.ggplot(~hist(heights$weight, breaks = 20))
@@ -179,6 +205,8 @@ hist_afqt <- ggplotify::as.ggplot(~hist(heights$afqt, breaks = 20))
 
 gridExtra::grid.arrange(hist_weight, hist_afqt, ncol = 2)
 ```
+
+[Forklare grafane]{.underline}
 
 ## Discussion
 
