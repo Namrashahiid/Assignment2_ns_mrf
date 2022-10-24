@@ -104,8 +104,8 @@ Researchers used genetic testing to come up with the effect of height on income.
 
 In this study we are using the dataset heights.
 The purpose of this dataset is to compare how seven different variables affect each other.
-This dataset consist of the variables income, height, weight, age, marital, sex, education and aftq (percentile score on Armed Forces Qualification Test).
-Our consern will be to describe the variables with the help of tables and graphics and inn addition start to investigate how the seven variables influence income.
+This dataset consist of the variables income, height (in inches), weight (in pounds), age (between 47 and 56 years), marital, sex, education and aftq (percentile score on Armed Forces Qualification Test).
+Our concern will be to describe the variables with the help of tables and graphics and inn addition start to investigate how the seven variables influence income.
 We will start to present a summary of the data from the dataset.\
 
 ```{r}
@@ -199,8 +199,6 @@ The lower the income, the lower the curves at the start.
 We can also see that the longer and higher the education, thus the higher the income.
 
 ### Sex/Height/Income/Education/Age
-
-[Her vil eg eigentle ha education på høgre sida derfor står det education i overskrifta.]{.underline}
 
 ```{r}
 heights <- heights %>% 
