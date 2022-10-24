@@ -201,23 +201,6 @@ We can also see that the longer and higher the education, thus the higher the in
 ### Sex/Height/Income/Education/Age
 
 ```{r}
-heights <- heights %>% 
-  group_by(sex) %>% 
-  mutate(
-    heightIntSex = cut_number(height, n = 4, labels = c("very low", "low", "medium", "high"))
-  )
-```
-
-***Graph 1.4***
-
-This graph shows us the comparison between income and the height.
-The categories we see here in this graph is very low, low, medium and high.
-In this graph we can see how age is distributed in different age categories.
-What we can conclude with here is that there are many categories under categories in this graph.
-
-### Weight & Aftq
-
-```{r}
 heights %>% 
   filter(income > 0 & income < 300000) %>%
   mutate(
@@ -231,6 +214,22 @@ heights %>%
   geom_smooth(method = "lm", colour = "black", lwd = 0.5, na.rm = TRUE) + 
   facet_grid(edu_fac ~ sex) + 
   theme(legend.position = "bottom", strip.text.y = element_text(angle = 0))
+```
+
+***Graph 1.4***
+
+This graph shows us the comparison between income and the height.
+The categories we see here in this graph is very low, low, medium and high.
+In this graph we can see how age is distributed in different age categories.
+What we can conclude with here is that there are many categories under categories in this graph.
+
+### Weight & Afqt
+
+```{r}
+hist_weight <- ggplotify::as.ggplot(~hist(heights$weight, breaks = 20))
+hist_afqt <- ggplotify::as.ggplot(~hist(heights$afqt, breaks = 20))
+
+gridExtra::grid.arrange(hist_weight, hist_afqt, ncol = 2)
 ```
 
 ***Graph 1.5***
