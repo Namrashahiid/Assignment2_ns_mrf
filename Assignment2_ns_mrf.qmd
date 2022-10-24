@@ -119,7 +119,12 @@ ggplot(data = heights) +
   geom_bar(mapping = aes(x = marital, fill = marital))
 ```
 
-[(Dårle engelsk, eg veit :P) We see form the table and graph that we have a lot of different marital categories. The next thing we are going to do is to make the marital categories to 'married' and 'not married'.]{.underline}
+***Graph 1.0***
+
+What we can see from this graph 1.0 is the categories of marital state.
+If we take a look at this graph, we see that there are more married individuals.
+When we look at married graph in this survey we see that there are approximately 3800 married individuals.
+To make this graph more specific are we going to make the marital categories to only "married" and "not married".
 
 ```{r}
 heights <- heights %>%
@@ -149,7 +154,12 @@ heights %>%
   geom_boxplot()
 ```
 
-[Kva vi ser av grafen... Av grafen ser det ut til at menn som er gift ser ut til å tjene litt meir enn menn som ikkje er gift. Kvinner tjener ca like mykje om dei er gift eller ikkje.]{.underline}
+***Graph 1.1***
+
+What we can see in this graph is two categories married and not married male and female and how much income they have.
+We can see category married on x-axis and category income in y-axis.
+What we can say by looking at this graph is that men who are married earn more/ have more income in comparison with non married men.
+And when we look at female, it looks like there is no such big difference between married and non married females, when it comes to how they earn/ have in income
 
 ### Education
 
