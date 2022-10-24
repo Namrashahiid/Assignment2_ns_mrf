@@ -175,8 +175,9 @@ ggplot(data = heights) +
 As mentioned in this graph are we focusing on education.
 When it comes to categories, there are many categories in this graph.
 We have 20 different categories, and what we want to do here is that we want to divide these into smaller subcategories.
-We can see that there is a peak in age group, 12, 14 and 16 years.
-What we have done in this graph is that we have divided the variable into four subcategories: not high-school (0-12 years), not trade collage (12-14 years) and collage+ (16-21 years).
+We can see that there is a peak at 12, 14 and 16 years of education.
+The next thing we want to do is to divide the data into four categories instead of 20.
+The four subcategories will be not high-school (0-12 years), not trade collage (12-14 years) and collage+ (16-21 years).
 
 ```{r}
 heights %>% 
@@ -194,9 +195,13 @@ heights %>%
 
 ***Graph 1.3***
 
-What we see in this graph is that flatter areas which contains collage + education, but it seems like there are more in this graph who has higher education.
-The lower the income, the lower the curves at the start.
-We can also see that the longer and higher the education, thus the higher the income.
+In this graph, we see that people without a high school education are the ones who earn the least.
+The curve is flatter the higher the level of education.
+This means that the spread in income is greater.
+In the collage + graph, we also see that there is a larger peak at the end.
+The longer and higher the education, the higher the probability of a high income.
+
+The graphs are also divided into men and women, there men are represented by pink graphs and women by blue.
 
 ### Sex/Height/Income/Education/Age
 
@@ -219,7 +224,7 @@ heights %>%
 ***Graph 1.4***
 
 This graph shows us the comparison between income and the height.
-The categories we see here in this graph is for example age, colour, size and so on.
+The graph also considers education level and age.
 The age group is between 45-56 years old.
 In this graph we can see how age is distributed in different age categories.
 We can in this graph conclude by saying that data of men are more spread in comparison with the data of women.
@@ -236,9 +241,12 @@ gridExtra::grid.arrange(hist_weight, hist_afqt, ncol = 2)
 
 ***Graph 1.5***
 
-In this histogram graph what we see is the comparison between height and weight in the first one.
-And height and afqt in the second one.
-The second histogram looks more a like balanced, when we look at the bars.
+In these histogram graphs we see the comparison between height and weight in the first one, and height and afqt in the second one.
+The second histogram looks more balanced, when we look at the bars.
+
+Note: Ideally we would like these histograms to show weight and afqt-scores in relation to income.
+When we try to insert the y axis as income, we get this message: *Error: stat_bin() can only have an x or y aesthetic*.
+There was not enough time to fix this problem when we discovered it.
 
 ## Discussion
 
@@ -247,7 +255,7 @@ As we have discussed in the Literature review, many researchers shows us that he
 Most research are in favor of that height have much to say about how much income one individual have.
 In the Literature review we have discussed some researchers point of view on height dependence on income.
 
-When we look at the graphs we have worked with in EDA part, we see that there are many categories we can work with in only on graph.
+When we look at the graphs we have worked with in EDA part, we see that there are many categories we can work with, in only one graph.
 For example the first graph 1.0 we see that on x-axis we find marital state and the amount/count on the y-axis.
 And at the same time we also find other categories, such as single, married, separated, widowed and divorced.
 Graphs are useful and can give us a better overview on everything in research and so on.
@@ -258,12 +266,58 @@ This is because we separate men and female with colors, which makes it quite mor
 The graph 1.4 is very effective, because there we can have more of information at the same time.
 Information we see at first sight is income and height, but the thing is that we have many under categories such as size, colour etc.
 
+In this assignment we are looking at how seven different variables affect each other.
+More precisely we are looking at how heights, weight, age, marital, sex, education and afqt influence income.
+
+### Marital
+
+Graph 1.1 looks at how being married or not affects income.
+From the box plot, we see that married men tend to earn slightly more than unmarried men.
+For women the income is almost identical whether they are married or not.
+
+### Education
+
+In graph 1.3 education and income are studied.
+We have chosen to look at men and women separately.
+It may appear that the higher the level of education a person has, the higher the income.
+We see from the fist graph, of those with the shortest education, that the graphs peak at the lowest income.
+In comparison, the graph for those with the longest income is flatter.
+This means that there are some of those with a high level of education who earn just as little as those with a low level of education.
+In total we see that the people with the highest education level, have the highest income.
+
+Overall, it may also appear that men generally earn the most, regardless of education level.
+
+### Height
+
+From graph 1.4 it looks like height does not influence income, at least not in this study.
+
+### Age
+
+Graph 1.4 also looks at the variable age.
+There are a lot of green and blue dots in the graphs.
+These dots represent the age group form 50-53 years.
+There are probably a higher participation of people in this age group.
+
+We cannot see any clear trend in age and income.
+This is probably because the dataset covers a small age group of well-grown people.
+This age group is not a recent graduate and has been in the workforce for a long time.
+
+### Weight
+
+The first histogram in graph 1.5 shows us that most of the people participating in the study weighed around 200 pounds.
+
+The second histogram shows that the participants are evenly distributed when it comes to afqt (percentile score on Armed Forces Qualification Test).
+Most people score low, but there are also many who score 100.
+
 ## Conclusion
 
-We can here conclude by saying that height determine income and also other data determine income.
-Other data such as: weight, age, education and afqt, as we have seen in our statistics under EDA also in some ways determine income.
 We can conclude by saying after looking at our graphs is that graphs are a effective way of extract data.
 When we have based data, then graphs at the same time can be effective.
+
+In conclusion, we see that many of the variables in the dataset heights determine income.
+Some variables have no effect on income, but most of them point us in a direction.
+Example of this is sex, marital status, education.
+Other data such as age and height as we have seen in our statistics under EDA does not influence income.
 
 ## References
 
