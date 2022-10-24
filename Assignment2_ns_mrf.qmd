@@ -219,9 +219,11 @@ heights %>%
 ***Graph 1.4***
 
 This graph shows us the comparison between income and the height.
-The categories we see here in this graph is very low, low, medium and high.
+The categories we see here in this graph is for example age, colour, size and so on.
+The age group is between 45-56 years old.
 In this graph we can see how age is distributed in different age categories.
-What we can conclude with here is that there are many categories under categories in this graph.
+We can in this graph conclude by saying that data of men are more spread in comparison with the data of women.
+What we can say here is that height has not that much to say here about how much one individual earn or have in income.
 
 ### Weight & Afqt
 
@@ -245,11 +247,23 @@ As we have discussed in the Literature review, many researchers shows us that he
 Most research are in favor of that height have much to say about how much income one individual have.
 In the Literature review we have discussed some researchers point of view on height dependence on income.
 
+When we look at the graphs we have worked with in EDA part, we see that there are many categories we can work with in only on graph.
+For example the first graph 1.0 we see that on x-axis we find marital state and the amount/count on the y-axis.
+And at the same time we also find other categories, such as single, married, separated, widowed and divorced.
+Graphs are useful and can give us a better overview on everything in research and so on.
+
+When it comes to transparency, the fact of the matter is that graph 1.3 is a very clear and more understandable graph.
+This is because we separate men and female with colors, which makes it quite more visible in the first moment.
+
+The graph 1.4 is very effective, because there we can have more of information at the same time.
+Information we see at first sight is income and height, but the thing is that we have many under categories such as size, colour etc.
+
 ## Conclusion
 
 We can here conclude by saying that height determine income and also other data determine income.
 Other data such as: weight, age, education and afqt, as we have seen in our statistics under EDA also in some ways determine income.
-As we have seen different researchers point of view on height determination on income, can we conclude by saying that height can in many contexts determine income.
+We can conclude by saying after looking at our graphs is that graphs are a effective way of extract data.
+When we have based data, then graphs at the same time can be effective.
 
 ## References
 
