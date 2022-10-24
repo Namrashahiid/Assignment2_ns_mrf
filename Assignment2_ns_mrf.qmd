@@ -275,7 +275,7 @@ Graph 1.1 looks at how being married or not affects income.
 From the box plot, we see that married men tend to earn slightly more than unmarried men.
 For women the income is almost identical whether they are married or not.
 
-### Education
+### Education & sex
 
 In graph 1.3 education and income are studied.
 We have chosen to look at men and women separately.
@@ -302,7 +302,7 @@ We cannot see any clear trend in age and income.
 This is probably because the dataset covers a small age group of well-grown people.
 This age group is not a recent graduate and has been in the workforce for a long time.
 
-### Weight
+### Weight & afqt
 
 The first histogram in graph 1.5 shows us that most of the people participating in the study weighed around 200 pounds.
 
