@@ -1,0 +1,10 @@
+---
+title: "ag comments"
+format: html
+editor: visual
+---
+
+-   Har endret litt på litteraturgjennomgangen for å gi noen tips om hvordan jeg mener den bør skrives.
+-   La inn en referanse etter «Most researchers investigate income, marital status, and hourly pay differentials by body mass (kg/m2)». Alle slike påstander må underbygges. Jeg valgte slate2017. Finnes kanskje bedre, men ser ut til å behandle body mass og lønn.
+-   Obs! «low nutrition quality can cause non survival of children which can cause short height or». Hvis du dør som barn blir du ikke særlig høy ja ;-). Prøv å unngå slike formuleringer.
+-   Se kommentar lagt inn under figur 1.4. Kanskje den viktigste innsikten vi kan få fra en EDA her
